@@ -1,10 +1,30 @@
+<?php
+session_start();
+include_once 'dbconnect.php';
+
+if (!isset($_SESSION['userSession'])) {
+	header("Location: login.php");
+}
+
+$query = $DBcon->query("SELECT * FROM users WHERE user_id=".$_SESSION['userSession']);
+$userRow=$query->fetch_array();
+$DBcon->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width" />
-      <title>Lamstan</title>
-      <link rel="stylesheet" href="css/components.css">
+      <title>Welcome to Lamstan- <?php echo $userRow['username']; ?></title>
+      
+	  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+	  <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
+
+	  <link rel="stylesheet" href="style.css" type="text/css" />
+	  
+	  <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/responsee.css">
       <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
       <link rel="stylesheet" href="owl-carousel/owl.theme.css">
@@ -27,14 +47,30 @@
       <header>
          <div id="topbar">
             <div class="line">
-               <div class="s-12 m-6 l-6">
-                  <a class="navbar-brand" href="http://www.lamstan.com">Welcome to Lamstan!</a>
-               </div>
+			
+				<div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.lamstan.com">Welcome to Lamstan!</a>
+        </div>
+
                <div class="s-12 m-6 l-6">
                   <div class="social right">
                      <a href="https://www.facebook.com/groups/lamstan/"><i class="icon-facebook_circle"></i></a> <a href="https://twitter.com/lamstanindia"><i class="icon-twitter_circle"></i></a> <a href="https://plus.google.com/u/0/109469743551860807742"><i class="icon-google_plus_circle"></i></a> <a href="https://www.instagram.com/info.lamstan/"><i class="icon-instagram_circle"></i></a>
                   </div>
                </div>
+			   
+			   <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp; <?php echo $userRow['username']; ?></a></li>
+            <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+			   
             </div>  
          </div> 
          <nav>

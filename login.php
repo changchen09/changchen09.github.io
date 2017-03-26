@@ -1,9 +1,48 @@
+<?php
+session_start();
+require_once 'dbconnect.php';
+
+if (isset($_SESSION['userSession'])!="") {
+	header("Location: home.php");
+	exit;
+}
+
+if (isset($_POST['btn-login'])) {
+	
+	$username = strip_tags($_POST['username']);
+	$password = strip_tags($_POST['password']);
+	
+	$username = $DBcon->real_escape_string($username);
+	$password = $DBcon->real_escape_string($password);
+	
+	$query = $DBcon->query("SELECT * FROM users WHERE username='$username'");
+	$row=$query->fetch_array();
+	
+	$count = $query->num_rows; // if email/password are correct returns must be 1 row
+	
+	if ($password == $row['password'] && $count==1) {
+		$_SESSION['userSession'] = $row['user_id'];
+		header("Location: home.php");
+	} else {
+		$msg = "<div class='alert alert-danger'>
+					<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Invalid Username or Password !
+				</div>";
+	}
+	$DBcon->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width" />
-      <title>Lamstan</title>
+	  
+	  <title>Lamstan - Login & Registration</title>
+	  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	  
+	  <link rel="stylesheet" href="style.css" type="text/css" />
+	  
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/responsee.css">
       <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
@@ -22,13 +61,14 @@
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
       <![endif]-->
    </head>
+   
    <body class="size-1140">
       <!-- TOP NAV WITH LOGO -->
       <header>
          <div id="topbar">
             <div class="line">
                <div class="s-12 m-6 l-6">
-                  <a class="navbar-brand" href="http://www.lamstan.com">Welcome to Lamstan!</a>
+                  Lamstan Ladakh
                </div>
                <div class="s-12 m-6 l-6">
                   <div class="social right">
@@ -55,109 +95,61 @@
                </div>
             </div>
          </nav>
-      </header>  
+      </header>
+	  
       <section>
-         <!-- CAROUSEL --> 
-         <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme"> 
-               <div class="item">
-                  <img src="img/first.jpg" alt="">
-                  <div class="line"> 
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>LAMSTAN CAREER COUNCELLING</h2>
-                        <p>
-						With the aims & objectives of providing a platform for good decision making with genuine interest & scope ,we as a group of students formed a society by the name " Lamstan " ,where 'Lam' means 'Path' & 'stan' means 'to show'- " Showing Path". “Lamstan” as the name itself reflects our objective. The education being a major right of every child in 21st century and a need to walk shoulder to shoulder with the world, have always been the core value for all ladakhi parents who are enlightened with the worth of being educated. Today a very huge sum of ransom is being spent by parents for educating and providing their children with quality education in good institutions. Ladakh today is aware of value of quality education but still somewhere lacking information about various career scopes for an individual. 
-						
-	
-</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="item" >
-                  <img src="img/second.jpg" alt="" >
-                  <div class="line">
-                     <div class="text hide-s"> 
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>WELCOME  TO LAMSTAN</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="img/third.jpg" alt="">
-                  <div class="line">
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>COME AND JOIN LAMSTAN TOGETHER WE CAN MAKE A DIFFERENCE</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+         
          <!-- FIRST BLOCK -->
          <div id="first-block">
             <div class="line">
                <h1>*** COME AND JOIN LAMSTAN TOGETHER WE CAN MAKE A DIFFERENCE ***</h1>
                <p>”Lamstan” attempts to bridge the opportunity divide.</p>
-               <div class="s-12 m-4 l-2 center"><a class="white-btn" href="login.php">LOGIN</a></div>
+               
             </div>
          </div>
-         <!-- FEATURES 
-         <div id="features">
-            <div class="line">
-               <div class="margin">
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-tablet icon3x"></i>
-                     <h2>ZZZZ ZZZZZZ</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-isight icon3x"></i>
-                     <h2>Clean design</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat adipiscing.</p>
-                  </div>
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-star icon3x"></i>
-                     <h2>Valid code</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna erat volutpat.</p>
-                  </div>
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-heart icon3x"></i>
-                     <h2>Totally free</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat nonummy.</p>
-                  </div>
-               </div>
-            </div>
-         </div> -->
+         
          <!-- ABOUT US -->
          <div id="about-us">
-            <div class="s-12 m-12 l-6 media-container">
-               <img src="img/about.jpg" alt="">
-            </div>
+		 <div class="s-12 m-12 l-6 media-container">
+               
+			   <form class="form-signin" method="post" id="login-form">
+      
+        <h2 class="form-signin-heading">Sign In -></h2><hr />
+        
+        <?php
+		if(isset($msg)){
+			echo $msg;
+		}
+		?>
+        
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Username" name="username" required />
+        <span id="check-e"></span>
+        </div>
+        
+        <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" name="password" required />
+        </div>
+       
+     	<hr />
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" name="btn-login" id="btn-login">
+    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+			</button> 
+            
+            <a href="register.php" class="btn btn-default" style="float:right;">Sign Up Here</a>
+            
+        </div>  
+        
+        
+      
+		</form>
+			   
+         </div>
+ 
             <article class="s-12 m-12 l-6">
+				<div class="s-2 m-3 l-3 center"><a class="white-btn" href="login.php">VOLUNTEER LOGIN</a></div>
                <h2>We Provide<br> Education<br> and career planning</h2> 
                <p>Lamstan is an organisation of young people, who share the same passion for assisting their fellow students from remotest part of world. Students of different grades are offered assistance to pursue their dreams in life.
 
@@ -168,59 +160,7 @@ Various students from Ladakh, due to incompetent facilities/opportunities in the
                </div>
             </article>
          </div>
-		 <!--
-          OUR WORK 
-         <div id="our-work">
-            <div class="line">
-               <h2 class="section-title">Our Work</h2>
-               <div class="tabs">
-                  <div class="tab-item tab-active">
-                    <a class="tab-label active-btn">Web Design</a>
-                    <div class="tab-content">
-                      <div class="margin">
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por1.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por4.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por6.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por3.jpg" alt=""></a></div>
-                      </div>
-                    </div>  
-                  </div>
-                  <div class="tab-item">
-                    <a class="tab-label">Development</a>        
-                    <div class="tab-content">
-                      <div class="margin">
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por7.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por5.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por1.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por2.jpg" alt=""></a></div>
-                      </div>
-                    </div>  
-                  </div>
-                  <div class="tab-item">
-                    <a class="tab-label">Social Campaigns</a>
-                    <div class="tab-content">
-                      <div class="margin">
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por4.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por6.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por3.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por5.jpg" alt=""></a></div>
-                      </div>
-                    </div>  
-                  </div>
-                  <div class="tab-item">
-                    <a class="tab-label">Photography</a>
-                    <div class="tab-content">
-                      <div class="margin">
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por7.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por2.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por5.jpg" alt=""></a></div>
-                        <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por6.jpg" alt=""></a></div>
-                      </div>
-                    </div>  
-                  </div>
-               </div>
-            </div>
-         </div>     --> 
+		 
          <!-- SERVICES -->
          <div id="services">
             <div class="line">
