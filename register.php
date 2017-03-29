@@ -21,14 +21,16 @@ if(isset($_POST['btn-signup'])) {
 	$wno = $DBcon->real_escape_string($wno);
 	$ucat = $DBcon->real_escape_string($ucat);
 	
-	//$hashed_password = password_hash($upass, PASSWORD_DEFAULT); // this function works only in PHP 5.5 or latest version
+	//$mdpass = md5($upass);
+	
+	$hashed_password = password_hash($upass, PASSWORD_DEFAULT, ['cost' => 13]); // this function works only in PHP 5.5 or latest version
 	
 	$check_user = $DBcon->query("SELECT username FROM users WHERE username='$uname'");
 	$count=$check_user->num_rows;
 	
 	if ($count==0) {
 		
-		$query = "INSERT INTO users(fullname,username,email,password,whatsappno,usercategory) VALUES('$fname','$uname','$email','$upass','$wno','$ucat')";
+		$query = "INSERT INTO users(fullname,username,email,password,whatsappno,usercategory) VALUES('$fname','$uname','$email','$hashed_password','$wno','$ucat')";
 
 		if ($DBcon->query($query)) {
 			$msg = "<div class='alert alert-success'>
@@ -101,7 +103,7 @@ if(isset($_POST['btn-signup'])) {
          <nav>
             <div class="line">
                <div class="s-12 l-2">
-                  <p class="logo"><strong>LAM</strong>STAN</p>
+                  <p class="logo"><a href="http://www.lamstan.com"><img src="img/Logo.png"></a></p>
                </div>
                <div class="top-nav s-12 l-10">
                   <p class="nav-text">Custom menu text</p>
@@ -175,7 +177,7 @@ if(isset($_POST['btn-signup'])) {
             <button type="submit" class="btn btn-default" name="btn-signup">
     		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
 			</button> 
-            <a href="index.php" class="btn btn-default" style="float:right;">Log In Here</a>
+            <a href="login.php" class="btn btn-default" style="float:right;">Log In Here</a>
         </div> 
       
       </form>
@@ -275,7 +277,7 @@ Jammu & Kashmir. </p>
                     <form class="customform" action="">
                       <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
                       <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                      <div class="s-12"><textarea placeholder="Your massage" name="" rows="5"></textarea></div>
+                      <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
                       <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
                     </form>
                   </div>                
@@ -288,13 +290,13 @@ Jammu & Kashmir. </p>
       <footer>
          <div class="line">
             <div class="s-12 l-6">
-               <p>Copyright 2017, uiet Design </p>
+               <p>Copyright 2017, UIET Design </p>
 			   <p>CONTACT US: <strong>   <br>Ph. 08800332445 (New- Delhi)-
        009596985101 (Leh- Ladakh)</strong>| <strong>info.lamstan@gmail.com</strong></p>
                
             </div>
             <div class="s-12 l-6">
-               <a class="right" href="http://www.uiet.puchd.ac.in/" title="Stanzin- Rinchen -Vaishali">Design and coding<br> by UIET students</a>
+               <a class="right" href="http://www.uiet.puchd.ac.in/" title="~ Stanzin ~ Rinchen ~ Vaishali ~">Design and coding<br> by UIET students</a>
             </div>
          </div>
       </footer>

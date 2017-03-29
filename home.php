@@ -76,7 +76,7 @@ $DBcon->close();
          <nav>
             <div class="line">
                <div class="s-12 l-2">
-                  <p class="logo"><strong>LAM</strong>STAN</p>
+                  <p class="logo"><a href="http://www.lamstan.com"><img src="img/Logo.png"></a></p>
                </div>
                <div class="top-nav s-12 l-10">
                   <p class="nav-text">Custom menu text</p>
@@ -156,9 +156,10 @@ $DBcon->close();
          <!-- FIRST BLOCK -->
          <div id="first-block">
             <div class="line">
+				<div class=" center"><h1>Welcome, <?php echo $userRow['username']; ?> !</div>
                <h1>*** COME AND JOIN LAMSTAN TOGETHER WE CAN MAKE A DIFFERENCE ***</h1>
                <p>”Lamstan” attempts to bridge the opportunity divide.</p>
-               <div class="s-12 m-4 l-2 center"><a class="white-btn" href="login.php">LOGIN</a></div>
+               
             </div>
          </div>
          <!-- FEATURES 
@@ -350,7 +351,7 @@ Jammu & Kashmir. </p>
                     <form class="customform" action="">
                       <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
                       <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                      <div class="s-12"><textarea placeholder="Your massage" name="" rows="5"></textarea></div>
+                      <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
                       <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
                     </form>
                   </div>                
@@ -363,13 +364,13 @@ Jammu & Kashmir. </p>
       <footer>
          <div class="line">
             <div class="s-12 l-6">
-               <p>Copyright 2017, uiet Design </p>
+               <p>Copyright 2017, UIET Design </p>
 			   <p>CONTACT US: <strong>   <br>Ph. 08800332445 (New- Delhi)-
        009596985101 (Leh- Ladakh)</strong>| <strong>info.lamstan@gmail.com</strong></p>
                
             </div>
             <div class="s-12 l-6">
-               <a class="right" href="http://www.uiet.puchd.ac.in/" title="Stanzin- Rinchen -Vaishali">Design and coding<br> by UIET students</a>
+               <a class="right" href="http://www.uiet.puchd.ac.in/" title="~ Stanzin ~ Rinchen ~ Vaishali ~">Design and coding<br> by UIET students</a>
             </div>
          </div>
       </footer>

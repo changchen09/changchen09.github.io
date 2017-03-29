@@ -10,6 +10,7 @@ if (isset($_SESSION['userSession'])!="") {
 if (isset($_POST['btn-login'])) {
 	
 	$username = strip_tags($_POST['username']);
+	//$password = md5($_POST['password']);
 	$password = strip_tags($_POST['password']);
 	
 	$username = $DBcon->real_escape_string($username);
@@ -20,7 +21,7 @@ if (isset($_POST['btn-login'])) {
 	
 	$count = $query->num_rows; // if email/password are correct returns must be 1 row
 	
-	if ($password == $row['password'] && $count==1) {
+	if (password_verify($password, $row['password']) && $count==1) {
 		$_SESSION['userSession'] = $row['user_id'];
 		header("Location: home.php");
 	} else {
@@ -80,7 +81,7 @@ if (isset($_POST['btn-login'])) {
          <nav>
             <div class="line">
                <div class="s-12 l-2">
-                  <p class="logo"><strong>LAM</strong>STAN</p>
+                  <p class="logo"><a href="http://www.lamstan.com"><img src="img/Logo.png"></a></p>
                </div>
                <div class="top-nav s-12 l-10">
                   <p class="nav-text">Custom menu text</p>
@@ -149,7 +150,10 @@ if (isset($_POST['btn-login'])) {
          </div>
  
             <article class="s-12 m-12 l-6">
-				<div class="s-2 m-3 l-3 center"><a class="white-btn" href="login.php">VOLUNTEER LOGIN</a></div>
+				<div class="s-12 m-12 l-4 center">
+					<a href="login.php">
+					<h4><strong>VOLUNTEER <br> LOGIN HERE</strong></h4></a>
+				</div><br><br>
                <h2>We Provide<br> Education<br> and career planning</h2> 
                <p>Lamstan is an organisation of young people, who share the same passion for assisting their fellow students from remotest part of world. Students of different grades are offered assistance to pursue their dreams in life.
 
@@ -254,7 +258,7 @@ Jammu & Kashmir. </p>
                     <form class="customform" action="">
                       <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
                       <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                      <div class="s-12"><textarea placeholder="Your massage" name="" rows="5"></textarea></div>
+                      <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
                       <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
                     </form>
                   </div>                
@@ -267,13 +271,13 @@ Jammu & Kashmir. </p>
       <footer>
          <div class="line">
             <div class="s-12 l-6">
-               <p>Copyright 2017, uiet Design </p>
+               <p>Copyright 2017, UIET Design </p>
 			   <p>CONTACT US: <strong>   <br>Ph. 08800332445 (New- Delhi)-
        009596985101 (Leh- Ladakh)</strong>| <strong>info.lamstan@gmail.com</strong></p>
                
             </div>
             <div class="s-12 l-6">
-               <a class="right" href="http://www.uiet.puchd.ac.in/" title="Stanzin- Rinchen -Vaishali">Design and coding<br> by UIET students</a>
+               <a class="right" href="http://www.uiet.puchd.ac.in/" title="~ Stanzin ~ Rinchen ~ Vaishali ~">Design and coding<br> by UIET students</a>
             </div>
          </div>
       </footer>

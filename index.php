@@ -333,7 +333,7 @@ Jammu & Kashmir. </p>
                     <form class="customform" action="">
                       <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
                       <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                      <div class="s-12"><textarea placeholder="Your massage" name="" rows="5"></textarea></div>
+                      <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
                       <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
                     </form>
                   </div>                
@@ -346,13 +346,13 @@ Jammu & Kashmir. </p>
       <footer>
          <div class="line">
             <div class="s-12 l-6">
-               <p>Copyright 2017, uiet Design </p>
+               <p>Copyright 2017, UIET Design </p>
 			   <p>CONTACT US: <strong>   <br>Ph. 08800332445 (New- Delhi)-
        009596985101 (Leh- Ladakh)</strong>| <strong>info.lamstan@gmail.com</strong></p>
                
             </div>
             <div class="s-12 l-6">
-               <a class="right" href="http://www.uiet.puchd.ac.in/" title="Stanzin- Rinchen -Vaishali">Design and coding<br> by UIET students</a>
+               <a class="right" href="http://www.uiet.puchd.ac.in/" title="~ Stanzin ~ Rinchen ~ Vaishali ~">Design and coding<br> by UIET students</a>
             </div>
          </div>
       </footer>
