@@ -162,7 +162,7 @@ $DBcon->close();
                
             </div>
          </div>
-         <!-- FEATURES 
+         <!-- FEATURES -->
          <div id="features">
             <div class="line">
                <div class="margin">
@@ -188,7 +188,7 @@ $DBcon->close();
                   </div>
                </div>
             </div>
-         </div> -->
+         </div> 
          <!-- ABOUT US -->
          <div id="about-us">
             <div class="s-12 m-12 l-6 media-container">
