@@ -6,8 +6,7 @@
       <title>Lamstan</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/responsee.css">
-      <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-      <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+      
       <!-- CUSTOM STYLE -->
       <link rel="stylesheet" href="css/template-style.css">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -40,81 +39,13 @@
                   <p class="logo"><img src="img/Logo.png"></p>
                </div>
                <div class="top-nav s-12 l-10">
-                  <p class="nav-text">Custom menu text</p>
-                  <ul class="right">
-                     <li class="active-item"><a href="#carousel">Home</a></li>
-                     <li><a href="#latest-news">News feed</a></li>
-                     <li><a href="#about-us">About Us</a></li>
-                     <li><a href="#our-work">ADMISSION</a></li>
-                     <li><a href="#">Events</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                  </ul>
+                 
                </div>
             </div>
          </nav>
       </header>  
       <section>
-         <!-- CAROUSEL --> 
-         <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme"> 
-               <div class="item">
-                  <img src="img/first.jpg" alt="">
-                  <div class="line"> 
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>WELCOME  TO LAMSTAN</h2>
-                        <p>
-						
-						"Never underestimate your ability to make someone else's life better- even if you never know it"-Greg Louganis
-	
-                               </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="item" >
-                  <img src="img/second.jpg" alt="" >
-                  <div class="line">
-                     <div class="text hide-s"> 
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>LAMSTAN CAREER COUNCELLING</h2>
-                        <p>With the aims & objectives of providing a platform for good decision making with genuine interest & scope ,we as a group of students formed a society by the name " Lamstan " ,where 'Lam' means 'Path' & 'stan' means 'to show'- " Showing Path". “Lamstan” as the name itself reflects our objective. The education being a major right of every child in 21st century and a need to walk shoulder to shoulder with the world, have always been the core value for all ladakhi parents who are enlightened with the worth of being educated. Today a very huge sum of ransom is being spent by parents for educating and providing their children with quality education in good institutions. 
-						Ladakh today is aware of value of quality education but still somewhere lacking information about various career scopes for an individual. </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="img/third.jpg" alt="">
-                  <div class="line">
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>COME AND JOIN LAMSTAN TOGETHER WE CAN MAKE A DIFFERENCE</h2>
-                        <p>.....</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+        
          <!-- FIRST BLOCK -->
          <div id="first-block">
             <div class="line">
@@ -139,35 +70,7 @@ Various students from Ladakh, due to incompetent facilities/opportunities in the
             </article>
          </div>
 		
-         <!-- serv -->
-         <div id="services">
-            <div class="line">
-               <h2 class="section-title">What we do</h2>
-               <div class="margin">
-                  <div class="s-12 m-6 l-4 margin-bottom">
-                     <i class="icon-vector"></i>
-                     <div class="service-text">
-                        <h3>Lamstan operates in remote areas and provide guidance to students regarding their career goals </h3>
-                        <p>In this enigmatic world of ours, where survival means struggle of any sort, needs to be introduced in full frame (modes) in order to get a glimpse of various avenues (courses), compatible with our interests & satisfactory enough for a happier life.</p>
-                     </div>
-                  </div>
-                  <div class="s-12 m-6 l-4 margin-bottom">
-                     <i class="icon-eye"></i>
-                     <div class="service-text">
-                        <h3>We look to the future</h3>
-                        <p>Adolescent is an age group where we not only become carefree due to emotion upheaval but also susceptible to wrong decisions, which might change the whole complexion of our future life. It is in this light that careful & meticulous guidance needs to be provided in order to let them think, decide & adore their future course.</p>
-                     </div>
-                  </div>
-                  <div class="s-12 m-12 l-4 margin-bottom">
-                     <i class="icon-random"></i>
-                     <div class="service-text">
-                        <h3>provide a very exclusive opportunity to seek advice from experienced professionals</h3>
-                        <p>Our training approach includes a mix of lectures, workshops, role play, site visits and social activities. Our aim is to bring up those who are outside the sphere of modern education system and career opportunities </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+       
          <!-- LATEST NEWS -->
          <div id="latest-news">
             <div class="line">
@@ -245,7 +148,7 @@ Jammu & Kashmir. </p>
       <footer>
          <div class="line">
             <div class="s-12 l-6">
-               <p>Copyright &copy; 2017, UIET Design  </p>
+               <p>Copyright 2017, UIET Design </p>
 			   <p>CONTACT US: <strong>   <br>Ph. 08800332445 (New- Delhi)-
        009596985101 (Leh- Ladakh)</strong>| <strong>info.lamstan@gmail.com</strong></p>
                
@@ -255,36 +158,6 @@ Jammu & Kashmir. </p>
             </div>
          </div>
       </footer>
-      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
-      <script type="text/javascript">
-         jQuery(document).ready(function($) {
-            var theme_slider = $("#owl-demo");
-            $("#owl-demo").owlCarousel({
-                navigation: false,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                autoPlay: 6000,
-                addClassActive: true,
-             // transitionStyle: "fade",
-                singleItem: true
-            });
-            $("#owl-demo2").owlCarousel({
-                slideSpeed: 300,
-                autoPlay: true,
-                navigation: true,
-                navigationText: ["&#xf007","&#xf006"],
-                pagination: false,
-                singleItem: true
-            });
-        
-            // Custom Navigation Events
-            $(".next-arrow").click(function() {
-                theme_slider.trigger('owl.next');
-            })
-            $(".prev-arrow").click(function() {
-                theme_slider.trigger('owl.prev');
-            })     
-        }); 
-      </script>
+     
    </body>
 </html>
