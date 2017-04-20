@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width" />
-      <title>Lamstan</title>
+      <title>LamStan</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/responsee.css">
       <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
@@ -16,20 +16,48 @@
       <script type="text/javascript" src="js/modernizr.js"></script>
       <script type="text/javascript" src="js/responsee.js"></script>
       <script type="text/javascript" src="js/template-scripts.js"></script> 
+	  
+	  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  <script>
+  
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "67abd1cb-524e-40d9-861e-0983142df0b4",
+      autoRegister: true, /* Set to true to automatically prompt visitors */
+      subdomainName: 'lamstan',
+      /*
+      subdomainName: Use the value you entered in step 1.4: http://imgur.com/a/f6hqN
+      */
+      httpPermissionRequest: {
+        enable: true
+      },
+      notifyButton: {
+          enable: true /* Set to false to hide */
+      }
+    }]);
+	
+  </script>
                  
-    
+      <!--[if lt IE 9]>
+	      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+      <![endif]-->
    </head>
+   
    <body class="size-1140">
       <!-- TOP NAV WITH LOGO -->
       <header>
          <div id="topbar">
             <div class="line">
                <div class="s-12 m-6 l-6">
-<!--   welcome .....-->
+                  <a class="navbar-brand" href="http://www.lamstan.com">Welcome to Lamstan!</a>
                </div>
                <div class="s-12 m-6 l-6">
                   <div class="social right">
-                     <a href="https://www.facebook.com/groups/lamstan/"><i class="icon-facebook_circle"></i></a> <a href="https://twitter.com/lamstanindia"><i class="icon-twitter_circle"></i></a> <a href="https://plus.google.com/u/0/109469743551860807742"><i class="icon-google_plus_circle"></i></a> <a href="https://www.instagram.com/info.lamstan/"><i class="icon-instagram_circle"></i></a>
+                     <a href="https://www.facebook.com/groups/lamstan/"><i class="icon-facebook_circle"></i></a> 
+					 <a href="https://twitter.com/lamstanindia"><i class="icon-twitter_circle"></i></a> 
+					 <a href="https://plus.google.com/u/0/109469743551860807742"><i class="icon-google_plus_circle"></i></a> 
+					 <a href="https://www.instagram.com/info.lamstan/"><i class="icon-instagram_circle"></i></a>
                   </div>
                </div>
             </div>  
@@ -37,17 +65,17 @@
          <nav>
             <div class="line">
                <div class="s-12 l-2">
-                  <p class="logo"><img src="img/Logo.png"></p>
+                  <p class="logo"><a href="http://www.lamstan.com"><img src="img/Logo.png"></a></p>
                </div>
                <div class="top-nav s-12 l-10">
-                  <p class="nav-text">Custom menu text</p>
+                  <p class="nav-text">Menu</p>
                   <ul class="right">
                      <li class="active-item"><a href="#carousel">Home</a></li>
                      <li><a href="#latest-news">News feed</a></li>
                      <li><a href="#about-us">About Us</a></li>
-                     <li><a href="#our-work">ADMISSION</a></li>
-                     <li><a href="#">Events</a></li>
-                     <li><a href="#contact">Contact</a></li>
+                     <li><a href="#events">Events</a></li>
+                     <li><a href="#admissions">Admissions</a></li>
+					 <li><a href="#contact">Contact</a></li>
                   </ul>
                </div>
             </div>
@@ -56,7 +84,28 @@
       <section>
          <!-- CAROUSEL --> 
          <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme"> 
+            <div id="owl-demo" class="owl-carousel owl-theme">
+
+				<div class="item" >
+                  <img src="img/second.jpg" alt="" >
+                  <div class="line">
+                     <div class="text hide-s"> 
+                        <div class="line"> 
+                          <div class="prev-arrow hide-s hide-m">
+                             <i class="icon-chevron_left"></i>
+                          </div>
+                          <div class="next-arrow hide-s hide-m">
+                             <i class="icon-chevron_right"></i>
+                          </div>
+                        </div> 
+                        <h2>WELCOME  TO LAMSTAN</h2>
+
+                        <p>"Never underestimate your ability to make someone else's life better- even if you never know it" -Greg Louganis</p>
+
+                     </div>
+                  </div>
+               </div>
+			
                <div class="item">
                   <img src="img/first.jpg" alt="">
                   <div class="line"> 
@@ -69,33 +118,15 @@
                              <i class="icon-chevron_right"></i>
                           </div>
                         </div> 
-                        <h2>WELCOME  TO LAMSTAN</h2>
-                        <p>
-						
-						"Never underestimate your ability to make someone else's life better- even if you never know it"-Greg Louganis
-	
-                               </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="item" >
-                  <img src="img/second.jpg" alt="" >
-                  <div class="line">
-                     <div class="text hide-s"> 
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
                         <h2>LAMSTAN CAREER COUNCELLING</h2>
+
                         <p>With the aims & objectives of providing a platform for good decision making with genuine interest & scope ,we as a group of students formed a society by the name " Lamstan " ,where 'Lam' means 'Path' & 'stan' means 'to show'- " Showing Path". “Lamstan” as the name itself reflects our objective. The education being a major right of every child in 21st century and a need to walk shoulder to shoulder with the world, have always been the core value for all ladakhi parents who are enlightened with the worth of being educated. Today a very huge sum of ransom is being spent by parents for educating and providing their children with quality education in good institutions. 
 						Ladakh today is aware of value of quality education but still somewhere lacking information about various career scopes for an individual. </p>
+
                      </div>
                   </div>
                </div>
+              
                <div class="item">
                   <img src="img/third.jpg" alt="">
                   <div class="line">
@@ -109,7 +140,7 @@
                           </div>
                         </div> 
                         <h2>COME AND JOIN LAMSTAN TOGETHER WE CAN MAKE A DIFFERENCE</h2>
-                        <p>.....</p>
+                        <p>.......</p>
                      </div>
                   </div>
                </div>
@@ -123,7 +154,7 @@
                <div class="s-12 m-4 l-2 center"><a class="white-btn" href="login.php">LOGIN</a></div>
             </div>
          </div>
-        
+         
          <!-- ABOUT US -->
          <div id="about-us">
             <div class="s-12 m-12 l-6 media-container">
@@ -138,8 +169,8 @@ Various students from Ladakh, due to incompetent facilities/opportunities in the
                
             </article>
          </div>
-		
-         <!-- serv -->
+		  
+         <!-- SERVICES -->
          <div id="services">
             <div class="line">
                <h2 class="section-title">What we do</h2>
@@ -162,7 +193,7 @@ Various students from Ladakh, due to incompetent facilities/opportunities in the
                      <i class="icon-random"></i>
                      <div class="service-text">
                         <h3>provide a very exclusive opportunity to seek advice from experienced professionals</h3>
-                        <p>Our training approach includes a mix of lectures, workshops, role play, site visits and social activities. Our aim is to bring up those who are outside the sphere of modern education system and career opportunities </p>
+                        <p>Our training approach includes a mix of lectures, workshops, role play, site visits and social activities. Our aim is to bring up those who are outside the sphere of modern education system and career opportunities.</p>
                      </div>
                   </div>
                </div>
@@ -229,11 +260,11 @@ Jammu & Kashmir. </p>
                   </div>
                   <div class="s-12 m-12 l-5">
                     <h3>FEEDBACK FORM (Incase improvement required)</h3>
-                    <form class="customform" action="">
-                      <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
-                      <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                      <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
-                      <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
+                    <form class="customform" action="connectivity_feedback.php">
+                      <div class="s-12"><input name="email" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
+                      <div class="s-12"><input name="name" placeholder="Your name" title="Your name" type="text" /></div>
+                      <div class="s-12"><textarea placeholder="Your message" name="message" rows="5"></textarea></div>
+                      <div class="s-12 m-12 l-4"><button class="color-btn" name="btn-feedback" type="submit">Submit Button</button></div>
                     </form>
                   </div>                
                </div>
