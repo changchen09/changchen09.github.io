@@ -1,24 +1,4 @@
-<?php
-session_start();
-if (isset($_POST['btn-signup']))
 
- //if(!empty($_POST['fullname'])&&!empty($_POST['username'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&!empty($_POST['whatsappno'])&&!empty($_POST['usercategory'])&&!empty($_POST['ccode']))
-      {
-		  if ($_POST['ccode']==$_SESSION['random_code'])
-	
-
-	       {$accept="thank you";	
-	}
-	else
-	{
-		$error="please verify that you typed the corect code.";
-		
-	}
-	  }
-	  
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -26,7 +6,7 @@ if (isset($_POST['btn-signup']))
     <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width" />
 	  
-	  <title>Lamstan - Login & Registration</title>
+	  <title>Lamstan - Book Donation </title>
 	  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	  <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
 	  <link rel="stylesheet" href="style.css" type="text/css" />
@@ -89,13 +69,13 @@ if (isset($_POST['btn-signup']))
                
          </div>
         
-         <!-- SIGN IN-->
+         <!-- DONATE BOOK FORM-->
          <div class="signin-form">
      
         
        <form class="form-signin" method="post" id="register-form">
       
-        <h2 class="form-signin-heading">Sign Up</h2><hr />
+        <h2 class="form-signin-heading">---BOOK DONATION FORM--- </h2><hr />
         
         <?php
 		if (isset($msg)) {
@@ -107,47 +87,43 @@ if (isset($_POST['btn-signup']))
         <input type="text" class="form-control" placeholder="Fullname" name="fullname" required  />
         </div>
 		
-		<div class="form-group">
-        <input type="text" class="form-control" placeholder="Username" name="username" required  />
-        </div>
         
         <div class="form-group">
         <input type="email" class="form-control" placeholder="Email address" name="email" required  />
         <span id="check-e"></span>
         </div>
         
-        <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" name="password" required  />
+		
+		<div class="form-group">
+        <input type="text" class="form-control" placeholder="Phone no" name="whatsappno" required  />
         </div>
 		
 		<div class="form-group">
-        <input type="text" class="form-control" placeholder="WhatsApp No." name="whatsappno" required  />
+        <input type="text" class="form-control" placeholder="Designation" name="designation" required  />
+        </div>
+		<div class="form-group">
+        <input type="text" class="form-control" placeholder="Location of pickup books" name="location" required  />
         </div>
 		
+		
 		<div class="form-group">
-        <input type="text" class="form-control" placeholder="User Category" name="usercategory" required  />
+        <input type="textarea" class="form-control" placeholder="In case any query" name="query" required  />
         </div>
+		
 		<hr>
-		<div class="form-group">
-		<img src="captcha1.php" align="centre"  border="pixels">
 		
 		
-		<p>
-		<hr>
-		
-        <input type="text" class="form-control" placeholder="Enter captcha" name="ccode" required  />Are you human?</p>
+        <input type="text" class="form-control" placeholder="Enter captcha" name="ccode" required  />To verify</p>
         </div>
 		
+		</hr> 
+        
+     
 		</hr>
         
-     	</hr>
-		</hr>
-        
         <div class="form-group">
-            <button type="submit" class="btn btn-default" name="btn-signup">
-    		<span class="glyphicon glyphicon-log-in" ></span> &nbsp; Create Account
-			</button> 
-            <a href="login.php" class="btn btn-default" style="float:right;">Log In Here</a>
+ 
+            <a href="login.php" class="btn btn-default" style="float:right;">I am ready to HELP </a>
         </div> 
       
       </form> 

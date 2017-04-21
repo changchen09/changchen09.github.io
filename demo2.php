@@ -1,25 +1,3 @@
-<?php
-session_start();
-if (isset($_POST['btn-signup']))
-
- //if(!empty($_POST['fullname'])&&!empty($_POST['username'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&!empty($_POST['whatsappno'])&&!empty($_POST['usercategory'])&&!empty($_POST['ccode']))
-      {
-		  if ($_POST['ccode']==$_SESSION['random_code'])
-	
-
-	       {$accept="thank you";	
-	}
-	else
-	{
-		$error="please verify that you typed the corect code.";
-		
-	}
-	  }
-	  
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en-US">
    <head>
@@ -41,20 +19,6 @@ if (isset($_POST['btn-signup']))
       <script type="text/javascript" src="js/modernizr.js"></script>
       <script type="text/javascript" src="js/responsee.js"></script>
       <script type="text/javascript" src="js/template-scripts.js"></script> 
-	  
-	  <style type="text/css">
-	  .error
-	  {
-		  color:#FF0000;
-		  margin:0 0 10px 0;
-	  }
-	  .accept
-	  {
-		  
-		   color:#339968;
-		  margin:0 0 10px 0;
-	  }
-	  </style>
                  
     
    </head>
@@ -66,11 +30,9 @@ if (isset($_POST['btn-signup']))
          <div id="first-block">
             <div class="line">
                <div class="s-12 l-2">
-                  <p class="logo"><img src="img/Logo.png"></p>  <>
-	<!--			  
-<ul>
-<li><a href="https://www.facebook.com/groups/lamstan/"><img src="img/fl.png"></a>
-</li>
+                  <p class="logo"><img src="img/Logo.png"></p>  
+				  
+
 				<!-- <div class="social">
 				  <div class="s-12 m-6 l-6">
                   
@@ -90,71 +52,44 @@ if (isset($_POST['btn-signup']))
          </div>
         
          <!-- SIGN IN-->
-         <div class="signin-form">
-     
-        
-       <form class="form-signin" method="post" id="register-form">
+ <div id="about-us">
+		 <div class="s-12 m-12 l-6 media-container">
+               
+			   <form class="form-signin" method="post" id="login-form">
       
-        <h2 class="form-signin-heading">Sign Up</h2><hr />
+        <h2 class="form-signin-heading">Sign In -></h2><hr />
         
         <?php
-		if (isset($msg)) {
+		if(isset($msg)){
 			echo $msg;
 		}
 		?>
-          
-        <div class="form-group">
-        <input type="text" class="form-control" placeholder="Fullname" name="fullname" required  />
-        </div>
-		
-		<div class="form-group">
-        <input type="text" class="form-control" placeholder="Username" name="username" required  />
-        </div>
         
         <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email address" name="email" required  />
+        <input type="text" class="form-control" placeholder="Username" name="username" required />
         <span id="check-e"></span>
         </div>
         
         <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" name="password" required  />
+        <input type="password" class="form-control" placeholder="Password" name="password" required />
         </div>
-		
-		<div class="form-group">
-        <input type="text" class="form-control" placeholder="WhatsApp No." name="whatsappno" required  />
-        </div>
-		
-		<div class="form-group">
-        <input type="text" class="form-control" placeholder="User Category" name="usercategory" required  />
-        </div>
-		<hr>
-		<div class="form-group">
-		<img src="captcha1.php" align="centre"  border="pixels">
-		
-		
-		<p>
-		<hr>
-		
-        <input type="text" class="form-control" placeholder="Enter captcha" name="ccode" required  />Are you human?</p>
-        </div>
-		
-		</hr>
-        
-     	</hr>
-		</hr>
+       
+     	<hr />
         
         <div class="form-group">
-            <button type="submit" class="btn btn-default" name="btn-signup">
-    		<span class="glyphicon glyphicon-log-in" ></span> &nbsp; Create Account
+            <button type="submit" class="btn btn-default" name="btn-login" id="btn-login">
+    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
 			</button> 
-            <a href="login.php" class="btn btn-default" style="float:right;">Log In Here</a>
-        </div> 
+            
+            <a href="register.php" class="btn btn-default" style="float:right;">Sign Up Here</a>
+            
+        </div>  
+        
+        
       
-      </form> 
-	  
-    
-	</div>
-		 
+		</form>
+			   
+         </div>
 		
         
       <!-- FOOTER -->
@@ -171,15 +106,6 @@ if (isset($_POST['btn-signup']))
             </div>
          </div>
       </footer>
-	  <?php if(!empty($error)) echo ' <div class="error">'.$error.'</div>'; ?>
-	   <?php if(!empty($accept)) echo ' <div class="accept">'.$accept.'</div>';?>
-	  
 
    </body>
 </html>
- 
-
-
-
-
-

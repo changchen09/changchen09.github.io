@@ -69,7 +69,7 @@ if (isset($_POST['btn-login'])) {
          <div id="topbar">
             <div class="line">
                <div class="s-12 m-6 l-6">
-                  Lamstan Ladakh
+                 <b> Lamstan Ladakh</b>
                </div>
                <div class="s-12 m-6 l-6">
                   <div class="social right">
@@ -85,14 +85,7 @@ if (isset($_POST['btn-login'])) {
                </div>
                <div class="top-nav s-12 l-10">
                   <p class="nav-text">Custom menu text</p>
-                  <ul class="right">
-                     <li class="active-item"><a href="#carousel">Home</a></li>
-                     <li><a href="#latest-news">News feed</a></li>
-                     <li><a href="#about-us">About Us</a></li>
-                     <li><a href="#our-work">Our Work</a></li>
-                     <li><a href="#services">Services</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                  </ul>
+                  
                </div>
             </div>
          </nav>
@@ -152,121 +145,16 @@ if (isset($_POST['btn-login'])) {
             <article class="s-12 m-12 l-6">
 				<div class="s-12 m-12 l-4 center">
 					<a href="login.php">
-					<h4><strong>VOLUNTEER <br> LOGIN HERE</strong></h4></a>
+				<a href="#" class="btn btn-default" style="float:right;">Volunteer Registration</a>
+					
+					<!--h4><strong>VOLUNTEER <br> LOGIN HERE</strong></h4>--></a>
 				</div><br><br>
-               <h2>We Provide<br> Education<br> and career planning</h2> 
-               <p>Lamstan is an organisation of young people, who share the same passion for assisting their fellow students from remotest part of world. Students of different grades are offered assistance to pursue their dreams in life.
-
-Various students from Ladakh, due to incompetent facilities/opportunities in their own native area, find the necessity for moving to other cities to further their studies/career. Pursuing studies or hunting jobs in other cities opens a whole new can of worms. In their crusade, students often get trapped into dilemmas, such as, which college to study, which course to opt for, will engineering do the best for them or should they opt for commerce courses, and the list goes on for eternity. In all these chaos, many students end up studying in wrong colleges/schools, or leaving the idea altogether and returning back to their respective homes. 
-               </p>
-               <div class="about-us-icons">
-                  <i class="icon-paperplane_ico"></i> <i class="icon-trophy"></i> <i class="icon-clock"></i>
-               </div>
+               
+              
             </article>
          </div>
 		 
-         <!-- SERVICES -->
-         <div id="services">
-            <div class="line">
-               <h2 class="section-title">What we do</h2>
-               <div class="margin">
-                  <div class="s-12 m-6 l-4 margin-bottom">
-                     <i class="icon-vector"></i>
-                     <div class="service-text">
-                        <h3>Lamstan operates in remote areas and provide guidance to students regarding their career goals </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                     </div>
-                  </div>
-                  <div class="s-12 m-6 l-4 margin-bottom">
-                     <i class="icon-eye"></i>
-                     <div class="service-text">
-                        <h3>We look to the future</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                     </div>
-                  </div>
-                  <div class="s-12 m-12 l-4 margin-bottom">
-                     <i class="icon-random"></i>
-                     <div class="service-text">
-                        <h3>provide a very exclusive opportunity to seek advice from experienced professionals</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- LATEST NEWS -->
-         <div id="latest-news">
-            <div class="line">
-              <h2 class="section-title">Latest News</h2> 
-              <div class="margin">
-                <div class="s-12 m-6 l-6">
-                  <div class="s-12 l-2">
-                    <div class="news-date">
-                      <p class="day">21</p><p class="month">MARCH</p><p class="year">2017</p>
-                    </div>
-                  </div>
-                  <div class="s-12 l-10">
-                    <div class="news-text">
-                      <h4>JNU UG Admission 2017</h4>
-                      <p>...................</p>
-                    </div>
-                  </div>   
-                </div> 
-                <div class="s-12 m-6 l-6">
-                  <div class="s-12 l-2">
-                    <div class="news-date">
-                      <p class="day">20</p><p class="month">MARCH</p><p class="year">2017</p>
-                    </div>
-                  </div>
-                  <div class="s-12 l-10">
-                    <div class="news-text">
-                      <h4>Aligarh Muslim University admissions 2017</h4>
-                      <p>.................</p>
-                    </div>
-                  </div>   
-                </div>  
-              </div>
-            </div>
-         </div> 
-         <!-- CONTACT -->
-         <div id="contact">
-            <div class="line">
-               <h2 class="section-title">Contact Us</h2>
-               <div class="margin">
-                  <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">
-                    <img src="img/contact.jpg" alt="">
-                  </div>
-                  <div class="s-12 m-12 l-4 margin-bottom right-align">
-                     <h3>Contact Details</h3>                                         
-					 
-					 
-					 
-                     <address>
-                        <p><strong>Call us for help with any aspect of your purchase, Offline.</strong><br><pre>Ph. 08800332445 (New- Delhi)
-						
-   009596985101 (Leh- Ladakh) </pre></p>
-                        <p><strong>Address:</strong>&nbsp;Choglamsar,
-Leh Ladakh-194101,
-Jammu & Kashmir. </p>
-                        <p><strong>E-mail:</strong>&nbsp;info.lamstan@gmail.com </p>
-                     </address>
-                     <br />
-                    
-                  </div>
-                  <div class="s-12 m-12 l-5">
-                    <h3>FEEDBACK FORM (Incase improvement required)</h3>
-                    <form class="customform" action="">
-                      <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
-                      <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                      <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
-                      <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
-                    </form>
-                  </div>                
-               </div>
-            </div>
-         </div>
         
-      </section>
       <!-- FOOTER -->
       <footer>
          <div class="line">
@@ -281,36 +169,6 @@ Jammu & Kashmir. </p>
             </div>
          </div>
       </footer>
-      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
-      <script type="text/javascript">
-         jQuery(document).ready(function($) {
-            var theme_slider = $("#owl-demo");
-            $("#owl-demo").owlCarousel({
-                navigation: false,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                autoPlay: 6000,
-                addClassActive: true,
-             // transitionStyle: "fade",
-                singleItem: true
-            });
-            $("#owl-demo2").owlCarousel({
-                slideSpeed: 300,
-                autoPlay: true,
-                navigation: true,
-                navigationText: ["&#xf007","&#xf006"],
-                pagination: false,
-                singleItem: true
-            });
-        
-            // Custom Navigation Events
-            $(".next-arrow").click(function() {
-                theme_slider.trigger('owl.next');
-            })
-            $(".prev-arrow").click(function() {
-                theme_slider.trigger('owl.prev');
-            })     
-        }); 
-      </script>
+      <s
    </body>
 </html>
