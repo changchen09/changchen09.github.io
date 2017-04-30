@@ -1,23 +1,68 @@
 <?php
 session_start();
-if (isset($_POST['btn-signup']))
+if (isset($_SESSION['userSession'])!="") {
+	header("Location: home.php");
+}
+require_once 'dbconnect.php';
 
- //if(!empty($_POST['fullname'])&&!empty($_POST['username'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&!empty($_POST['whatsappno'])&&!empty($_POST['usercategory'])&&!empty($_POST['ccode']))
-      {
-		  if ($_POST['ccode']==$_SESSION['random_code'])
+if(isset($_POST['btn-signup'])) {
 	
-
-	       {$accept="thank you";	
+	$fname = strip_tags($_POST['fullname']);
+	$uname = strip_tags($_POST['username']);
+	$email = strip_tags($_POST['email']);
+	$upass = strip_tags($_POST['password']);
+	$wno = strip_tags($_POST['whatsappno']);
+	$ucat = strip_tags($_POST['usercategory']);
+	
+	$fname = $DBcon->real_escape_string($fname);
+	$uname = $DBcon->real_escape_string($uname);
+	$email = $DBcon->real_escape_string($email);
+	$upass = $DBcon->real_escape_string($upass);
+	$wno = $DBcon->real_escape_string($wno);
+	$ucat = $DBcon->real_escape_string($ucat);
+	
+	//$mdpass = md5($upass);
+	
+	if ($_POST['ccode']==$_SESSION['random_code']){
+		$accept="thank you";
 	}
+
 	else
 	{
 		$error="please verify that you typed the corect code.";
 		
 	}
-	  }
-	  
+	
+	$hashed_password = password_hash($upass, PASSWORD_DEFAULT, ['cost' => 13]); // this function works only in PHP 5.5 or latest version
+	
+	$check_user = $DBcon->query("SELECT username FROM users WHERE username='$uname'");
+	$count=$check_user->num_rows;
+	
+	if ($count==0) {
+		
+		$query = "INSERT INTO users(fullname,username,email,password,whatsappno,usercategory) VALUES('$fname','$uname','$email','$hashed_password','$wno','$ucat')";
 
-
+		if ($DBcon->query($query)) {
+			$msg = "<div class='alert alert-success'>
+						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; successfully registered !
+					</div>";
+		}else {
+			$msg = "<div class='alert alert-danger'>
+						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering !
+					</div>";
+		}
+		
+	} else {
+		
+		
+		$msg = "<div class='alert alert-danger'>
+					<span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
+				</div>";
+			
+	}
+	
+	$DBcon->close();
+}
 ?>
 
 <!DOCTYPE html>
@@ -125,8 +170,11 @@ if (isset($_POST['btn-signup']))
         </div>
 		
 		<div class="form-group">
-        <input type="text" class="form-control" placeholder="User Category" name="usercategory" required  />
-        </div>
+			<h2 class="form-signin-heading">User Category?</h2><hr />
+			  <input type="radio" class="form-control" name="usercategory" value="School"><h2 class="form-signin-category">School</h2>
+			  <input type="radio" class="form-control" name="usercategory" value="College"><h2 class="form-signin-category">College</h2>
+			  <input type="radio" class="form-control" name="usercategory" value="Professional"><h2 class="form-signin-category">Professional</h2>
+		</div>
 		<hr>
 		<div class="form-group">
 		<img src="captcha1.php" align="centre"  border="pixels">

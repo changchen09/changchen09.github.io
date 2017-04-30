@@ -1,2 +1,2 @@
 <?php
-echo password_hash('givemepassword', PASSWORD_DEFAULT, ['cost' => 13]);
+echo password_hash('123', PASSWORD_DEFAULT, ['cost' => 13]);

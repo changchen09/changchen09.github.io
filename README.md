@@ -1,2 +1,2 @@
-# changchen09.github.io
+# changchen09.github.io -> LamStan
 Major Project

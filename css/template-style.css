@@ -182,7 +182,7 @@ p.logo strong {
 	z-index: 2;
 }
 #features i {
-	background: none repeat scroll 0 0 #92c500;
+	background: none repeat scroll 0 0 #6f9600;
 	border-radius: 100px;
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset;
 	color: #fff;
@@ -302,7 +302,7 @@ h2.section-title {
 	text-transform: uppercase;
 }
 #our-work {
-	background: none repeat scroll 0 0 #fff;
+	background: #fff none repeat scroll 0 0;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 	padding: 6em 2em;
 	position: relative;
